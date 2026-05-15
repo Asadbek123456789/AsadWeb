@@ -1,0 +1,73 @@
+:root {
+    --primary: #00f2fe;
+    --secondary: #4facfe;
+    --neon: #00f2fe;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+body { background: #050505; color: white; overflow-x: hidden; }
+
+/* Sichqoncha nurli effekti */
+#cursor-glow {
+    position: fixed; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none; z-index: -1; transform: translate(-50%, -50%); transition: 0.1s ease-out;
+}
+
+/* Glassmorphism Asosi */
+.glass-ui {
+    background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; padding: 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* Login */
+#login-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; }
+.login-card { width: 400px; text-align: center; }
+.brand span { color: var(--neon); text-shadow: 0 0 15px var(--neon); }
+
+.input-group input {
+    width: 100%; padding: 15px; margin: 12px 0; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05); color: white; outline: none; transition: 0.3s;
+}
+.input-group input:focus { border-color: var(--neon); background: rgba(255,255,255,0.1); }
+
+#runaway-container { position: relative; height: 70px; margin-top: 20px; display: flex; justify-content: center; align-items: center; }
+#login-btn { 
+    padding: 12px 60px; border-radius: 30px; border: none; background: var(--neon); 
+    color: black; font-weight: bold; cursor: pointer; transition: 0.1s; white-space: nowrap;
+}
+
+/* Navigatsiya */
+.hidden { display: none; }
+.glass-nav { 
+    display: flex; justify-content: space-between; padding: 20px 8%; position: sticky; top: 0; 
+    background: rgba(0,0,0,0.5); backdrop-filter: blur(15px); z-index: 1000; align-items: center;
+}
+.menu { display: flex; gap: 25px; align-items: center; }
+.menu a { text-decoration: none; color: #ccc; font-size: 0.9rem; transition: 0.3s; }
+.menu a:hover { color: var(--neon); }
+
+/* Hero */
+.section { padding: 80px 8%; text-align: center; }
+.hero { height: 90vh; display: flex; align-items: center; justify-content: center; }
+.hero-content { max-width: 900px; padding: 60px; }
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 25px; line-height: 1.1; background: linear-gradient(to right, #fff, var(--neon)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-content p { color: #aaa; margin-bottom: 30px; font-size: 1.1rem; line-height: 1.6; }
+
+.btn-glow { text-decoration: none; padding: 15px 45px; background: var(--neon); color: black; border-radius: 50px; font-weight: bold; box-shadow: 0 0 20px var(--neon); transition: 0.3s; }
+.btn-glow:hover { transform: scale(1.05); box-shadow: 0 0 40px var(--neon); }
+.btn-outline { text-decoration: none; padding: 15px 45px; border: 1px solid var(--neon); color: var(--neon); border-radius: 50px; margin-left: 15px; transition: 0.3s; }
+
+/* Gridlar */
+.title { font-size: 2.5rem; margin-bottom: 50px; color: var(--neon); text-transform: uppercase; letter-spacing: 2px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card { transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.card:hover { border-color: var(--neon); transform: translateY(-15px) scale(1.02); }
+.card i { font-size: 3rem; color: var(--neon); margin-bottom: 20px; }
+
+.circle-img { width: 80px; height: 80px; background: var(--neon); color: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; font-size: 1.5rem; }
+
+footer { padding: 60px; border-top: 1px solid rgba(255,255,255,0.05); opacity: 0.5; font-size: 0.8rem; }
+
+#lang-select { background: none; color: white; border: 1px solid rgba(255,255,255,0.2); padding: 5px; border-radius: 8px; }

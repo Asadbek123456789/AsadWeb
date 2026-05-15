@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsadWeb | Creative Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/i18next@21.6.10/dist/umd/i18next.min.js"></script>
+</head>
+<body>
+
+    <div id="cursor-glow"></div>
+
+    <div id="login-overlay">
+        <div class="glass-ui login-card">
+            <h1 class="brand">Asad<span>Web</span></h1>
+            <p data-i18n="login_p">Xush kelibsiz! Ma'lumotlarni kiriting.</p>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Gmail">
+                <input type="password" id="password" placeholder="Parol">
+            </div>
+            <div id="runaway-container">
+                <button id="login-btn" data-i18n="login_btn">Kirish</button>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-site" class="hidden">
+        <nav class="glass-nav">
+            <div class="logo">Asad<span>Web</span></div>
+            <div class="menu">
+                <a href="#courses" data-i18n="nav_courses">Kurslar</a>
+                <a href="#teachers" data-i18n="nav_teachers">Ustozlar</a>
+                <a href="#reviews" data-i18n="nav_reviews">Mijozlar</a>
+                <select id="lang-select">
+                    <option value="uz">UZ</option>
+                    <option value="en">EN</option>
+                    <option value="ru">RU</option>
+                </select>
+            </div>
+        </nav>
+
+        <section class="hero section">
+            <div class="glass-ui hero-content">
+                <h1 data-i18n="hero_h1">Yuqori Sifatli Raqamli Yechimlar</h1>
+                <p data-i18n="hero_p">Men Asadbek — murakkab web-saytlar va Telegram botlar yaratuvchi tajribali dasturchiman. Sizning g'oyalaringizni mukammal kodga aylantiraman.</p>
+                <div class="actions">
+                    <a href="https://t.me/Shokirjonov_asadbek" class="btn-glow">Telegram</a>
+                    <a href="https://instagram.com/o1_asad.bek" class="btn-outline">Instagram</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="teachers" class="section">
+            <h2 class="title" data-i18n="nav_teachers">Ustozlar</h2>
+            <div class="grid">
+                <div class="glass-ui card">
+                    <div class="circle-img">A</div>
+                    <h3>Asadbek</h3>
+                    <p>Senior Full-Stack Developer</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="section">
+            <h2 class="title" data-i18n="nav_courses">Kurslarimiz</h2>
+            <div class="grid">
+                <div class="glass-ui card">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend Pro</h3>
+                    <p>React, Next.js va zamonaviy UI.</p>
+                </div>
+                <div class="glass-ui card">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend Mastery</h3>
+                    <p>Node.js, MongoDB va APIlar.</p>
+                </div>
+                <div class="glass-ui card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Bot Expert</h3>
+                    <p>Telegram botlar arxitekturasi.</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="reviews" class="section">
+            <h2 class="title" data-i18n="nav_reviews">Mijozlar Fikri</h2>
+            <div class="grid">
+                <div class="glass-ui card review">
+                    <p>"Juda tez va sifatli ishlandi. Rahmat!"</p>
+                    <span>- Sardorbek</span>
+                </div>
+                <div class="glass-ui card review">
+                    <p>"Botlarimiz muammosiz ishlayapti, tavsiya qilaman."</p>
+                    <span>- Malika</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 AsadWeb Studio. <span data-i18n="rights">Barcha huquqlar himoyalangan.</span></p>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
