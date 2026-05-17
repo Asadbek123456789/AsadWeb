@@ -56,11 +56,17 @@ body {
 #scroll-top-btn.show { opacity: 1; visibility: visible; }
 #scroll-top-btn:hover { transform: translateY(-5px); }
 
-/* KUZGI BARGLAR SHAKLI */
-#leaves-container { position: fixed; inset: 0; pointer-events: none; z-index: 95; overflow: hidden; }
+/* KUZGI BARGLAR (RANGI YORQIN, LEKIN STRUKTURA ORQASIDA) */
+#leaves-container { 
+    position: fixed; 
+    inset: 0; 
+    pointer-events: none; 
+    z-index: 5; /* Fondan tepada, lekin login va sayt kontentlaridan mutloq pastda */
+    overflow: hidden; 
+}
 .leaf {
     position: absolute; width: 26px; height: 16px; background: #d35400;
-    border-radius: 80% 10% 80% 10%; opacity: 0.75; top: -50px; 
+    border-radius: 80% 10% 80% 10%; opacity: 0.9; top: -50px; 
     box-shadow: inset -2px -2px rgba(0,0,0,0.2);
     animation: fallAndSpin linear infinite;
 }
@@ -94,7 +100,7 @@ body {
 }
 #flashlight-mask.disabled-flash { background: none !important; mix-blend-mode: normal !important; }
 
-/* LOGIN OYNASI */
+/* LOGIN OYNASI (BARGLARDAN TEPADA TURADI) */
 #login-overlay { 
     position: fixed; inset: 0; z-index: 10000; background: rgba(3, 3, 5, 0.94); 
     display: flex; align-items: center; justify-content: center; padding: 20px;
@@ -109,7 +115,7 @@ body {
 .input-group-mono { width: 100%; }
 .input-group-mono input { width: 100%; padding: 14px; margin: 8px 0; border: 2px solid var(--mono-gray); border-radius: 12px; background: var(--mono-black); color: white; font-size: 0.95rem; outline: none; }
 
-/* TUGMA KONTEYNERI (O'ZGARTIRILMADI) */
+/* TUGMA KONTEYNERI */
 .btn-box-wrapper { width: 100%; height: 50px; margin-top: 20px; position: relative; }
 #login-btn { 
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -120,7 +126,12 @@ body {
     z-index: 10050;
 }
 
-/* MAIN SITE (ULTRA UZUN STRUKTURA) */
+/* MAIN SITE (BARGLARDAN TEPADA JOYLASHTIRILDI) */
+#main-site {
+    position: relative;
+    z-index: 10; /* Z-INDEX 10 BILAN BARGLARDAN TEPAGA CHIQARILDI */
+}
+
 .content-box {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(30, 18, 8, 0.55) 100%);
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -178,7 +189,7 @@ footer { padding: 40px; text-align: center; margin-top: 100px; background: #0c07
 
 .hidden { display: none !important; }
 
-/* TELEFON VA PLANSHEMLAR UCHUN JONLI SMART-RESPONSIVE */
+/* TELEFON VERSASIYA */
 @media (max-width: 992px) {
     .contact-box { flex-direction: column; gap: 30px; }
     .hero-content h1 { font-size: 2.8rem; }
@@ -188,7 +199,6 @@ footer { padding: 40px; text-align: center; margin-top: 100px; background: #0c07
     .site-nav { padding: 15px 5%; }
     .menu-toggle { display: block; }
     
-    /* Mobil Burger Menyusi */
     .menu { 
         position: absolute; top: 100%; left: 0; width: 100%; 
         background: rgba(16, 10, 3, 0.98); backdrop-filter: blur(20px);
@@ -213,8 +223,6 @@ footer { padding: 40px; text-align: center; margin-top: 100px; background: #0c07
     .stat-item h2 { font-size: 2.8rem; }
     
     #scroll-top-btn { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 0.9rem; }
-    #flashlight-mask { display: none !important; } /* Telefonlarda sichqoncha yo'qligi uchun o'chadi */
-    
-    /* Telefondagi login tugmasi oqilona boshqariladi */
+    #flashlight-mask { display: none !important; } 
     #login-btn { transform: none !important; }
 }
